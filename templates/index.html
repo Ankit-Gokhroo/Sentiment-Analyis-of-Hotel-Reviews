@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Demo Page</title>
+    <link rel="stylesheet" href="/static/mystyle.css">
+  </head>
+  <body>
+	
+    <!-- <button id="myBtn">Open Modal</button> -->
+
+    {% if response %} 
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+
+		  <!-- Modal content -->
+		  <div class="modal-content">
+		    <span class="close">&times;</span>
+		    <p>The Review is {{ output }}</p>
+		  </div>
+ 
+		</div>
+	    <script type="text/javascript" src="/static/myscript.js"></script>
+	{% endif %}
+    
+    <div class="content">
+	    <h1 style="background-color:Orange;"class="center" style="border:2px solid Tomato;">Welcome To Review Analysis </h1>
+	    <br>
+	     <!--img src="/static/images.png" width="150", height=150"-->
+	     <img src="/static/im1.jpg" width=1415, height=400>
+		<h1>Please enter your review.</h1>
+	    <form action="{{ url_for('result') }}" method="post">
+	      <input style=height:50px type="text" size=200 width=250 name="card" placeholder="Enter review"><br><br>
+	      <input type="submit" name="sub" value="PREDICT">
+	    </form>
+	    <!-- <button id="myBtn">Predict</button> -->
+	 </div>  
+  </body>
+</html>
